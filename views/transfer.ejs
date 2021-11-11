@@ -1,0 +1,33 @@
+<%- include('partials/header'); -%>
+
+        <form class="form-layout container-fluid" action="/" method="post">
+            <div>
+                    <label for="transfer-from" class="form-label d-block">Transfer From</label>
+                    <select name="from" id="transfer-from">
+                        <% customers.forEach((customer)=>{ %>
+                            <option value="<%=customer._id%>">Customer ID - <%=customer._id%> (Balance - &#x20B9;<%=customer.accountBalance%>)</option>
+                        <% }) %>
+                    </select>
+            </div>
+            <div>
+                    <label for="transfer-to" class="form-label d-block">Transfer To</label>
+                    <select name="to" id="transfer-to">
+                        <% customers.forEach((customer)=>{ %>
+                            <option value="<%=customer._id%>">Customer ID - <%=customer._id%> (Balance - &#x20B9;<%=customer.accountBalance%>)</option>
+                        <% }) %>
+                    </select>
+                    <% if(flag1===1){ %>
+                        <p>⚠️Transferor and Transferee can't be same!</p>
+                    <% } %>
+            </div>
+            <div>
+                    <label for="amount" class="form-label d-block">Amount</label>
+                    <input type="number" min="0" id="amount" name="amount" autocomplete="off" pattern="[1-9]{1}[0-9]" required>
+                    <% if(flag2===1){ %>
+                        <p>⚠️Amount mentioned is more than the available amount in the transferor's account.</p>
+                    <% } %>
+            </div>
+            <div><button type="submit">Transfer</button></div>
+        </form>
+
+    <%- include('partials/footer'); -%>

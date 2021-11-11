@@ -1,0 +1,21 @@
+<%- include('partials/header'); -%>
+
+<section class="container table-structure box text-center">
+    <div class="row row-cols-4  table-heading">
+      <div class="col">Customer ID</div>
+      <div class="col">Customer Name</div>
+      <div class="col">Email</div>
+      <div class="col">Account Balance</div>
+      </div>
+      <% customers.forEach((customer)=>{ %>
+        <div class="row row-cols-4 table-body">
+          <div class="col"><%=customer._id%></div>
+          <div class="col"><%=customer.name%></div>
+          <div class="col"><%=customer.email%></div>
+          <div class="col">&#x20B9;<%=customer.accountBalance%></div>
+        </div>
+        <% }) %>
+    </div>
+  </section>
+
+<%- include('partials/footer'); -%>

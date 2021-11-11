@@ -1,0 +1,22 @@
+<%- include('partials/header'); -%>
+
+<div class="container table-structure box text-center">
+    <div class="row row-cols-5 table-heading">
+      <div class="col">Transfer ID</div>
+      <div class="col">Transferred From</div>
+      <div class="col">Transferred To</div>
+      <div class="col">Transferred Amount</div>
+      <div class="col">Date</div>
+      </div>
+      <% transfers.forEach((transfer)=>{ %>
+        <div class="row row-cols-5 table-body">
+        <div class="col"><%=transfer._id%></div>
+        <div class="col"><%=transfer.transferredFrom%></div>
+        <div class="col"><%=transfer.transferredTo%></div>
+        <div class="col">&#x20B9;<%=transfer.amount%></div>
+        <div class="col"><%=transfer.date%></div>
+      </div>
+      <% }) %>
+  </div>
+
+<%- include('partials/footer'); -%>
