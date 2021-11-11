@@ -1,4 +1,4 @@
-# The Sparks Foundation - Task-1 - Basic Banking System
+# The Sparks Foundation - Task 1 - Basic Banking System
 TASK #1 : BASIC BANKING SYSTEM
 
 1. Create a simple dynamic website which has the following specs.
