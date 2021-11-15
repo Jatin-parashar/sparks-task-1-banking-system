@@ -96,6 +96,7 @@ app.post("/", (req, res) => {
                 const currentTime = date.toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
                 Transfer.find({}, (err, transfers) => {
                     let len = transfers.length;
+                    customers.sort((c1, c2) => c1._id - c2._id);
                     const transfer = new Transfer({
                         _id: len + 1,
                         transferredFrom: customers[fromID - 1].name,
